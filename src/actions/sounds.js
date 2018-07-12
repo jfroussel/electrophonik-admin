@@ -9,14 +9,20 @@ export const addSound = (soundData = {
     title: '',
     description: '',
     author: '',
-    bpm: 0
+    bpm: '',
+    genres: [],
+    moods: [],
+    loops:'',
 }) => {
     return (dispatch) => {
         const sound = {
             title: soundData.title,
             description: soundData.description,
             author: soundData.author,
-            bpm: soundData.bpm
+            bpm: soundData.bpm,
+            genres: soundData.genres,
+            moods: soundData.moods,
+            loops: soundData.loops,
         };
 
         return database.ref('sounds').push(sound).then(ref => {
@@ -48,6 +54,7 @@ const _editSound = (id, updates) => ({
 });
 
 export const editSound = (id, updates) => {
+    console.log('id :',id)
     return (dispatch) => {
         return database.ref(`sounds/${id}`).update(updates).then(() => {
             dispatch(_editSound(id, updates));

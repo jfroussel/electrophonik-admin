@@ -7,7 +7,7 @@ const AddSound = (props) => (
     <div>
         <h3>Set Sound information:</h3>
         <SoundForm
-            onSubmitBook={(sound) => {
+            onSubmitSound={(sound) => {
                 props.dispatch(addSound(sound));
                 props.history.push('/');
             }}
