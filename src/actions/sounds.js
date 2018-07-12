@@ -9,14 +9,14 @@ export const addSound = (soundData = {
     title: '',
     description: '',
     author: '',
-    published: 0
+    bpm: 0
 }) => {
     return (dispatch) => {
         const sound = {
             title: soundData.title,
             description: soundData.description,
             author: soundData.author,
-            published: soundData.published
+            bpm: soundData.bpm
         };
 
         return database.ref('sounds').push(sound).then(ref => {
