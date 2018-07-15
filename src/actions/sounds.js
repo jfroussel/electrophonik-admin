@@ -13,6 +13,7 @@ export const addSound = (soundData = {
     genres: [],
     moods: [],
     loops:'',
+   
 }) => {
     return (dispatch) => {
         const sound = {
@@ -23,6 +24,7 @@ export const addSound = (soundData = {
             genres: soundData.genres,
             moods: soundData.moods,
             loops: soundData.loops,
+            
         };
 
         return database.ref('sounds').push(sound).then(ref => {

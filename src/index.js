@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom';
 import AppRouter from './routers/AppRouter';
 import getAppStore from './store/store';
 import { addSound, getSounds } from './actions/sounds';
-
+import './App.css'
 
 import { Provider } from 'react-redux';
 
