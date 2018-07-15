@@ -14,9 +14,8 @@ const Header = () => (
             </button>
             <div className="collapse navbar-collapse" id="navbarNavAltMarkup">
                 <div className="navbar-nav">
-                    <NavLink className="nav-item nav-link" to='/' activeClassName='activeNav' exact={true}>Dashboard</NavLink>
-                    <NavLink className="nav-item nav-link" to='/add' activeClassName='activeNav'>Add Sound</NavLink>
-                    <NavLink className="nav-item nav-link" to='/help' activeClassName='activeNav'>Help</NavLink>
+                    <NavLink className="nav-item nav-link btn btn-primary text-white" to='/' activeClassName='activeNav' exact={true}>Liste des morceaux</NavLink>
+                    <NavLink className="nav-item nav-link btn btn-info text-white ml-2" to='/add' activeClassName='activeNav'>Ajouter un nouveau morceau</NavLink>
                 </div>
             </div>
         </nav>

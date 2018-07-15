@@ -1,19 +1,12 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { filterText, startYear, endYear, sortBy } from '../actions/filters';
+import { filterText, sortBy } from '../actions/filters';
 
 class SoundFilters extends React.Component {
     constructor(props) {
         super(props);
-        this.filterYear = this.filterYear.bind(this);
     }
 
-    filterYear() {
-        let start = (+this.startYear.value) !== 0 ? (+this.startYear.value) : undefined;
-        let end = (+this.endYear.value) !== 0 ? (+this.endYear.value) : undefined;
-        this.props.dispatch(startYear(start));
-        this.props.dispatch(endYear(end));
-    }
 
     render() {
         return (
@@ -34,14 +27,6 @@ class SoundFilters extends React.Component {
                     <option value='title'>Title</option>
                     <option value='published'>Published</option>
                 </select>
-                <br /><br />
-
-                <input type='number' placeholder='startYear' style={{ width: 80 }}
-                    ref={el => this.startYear = el}></input>
-                <input type='number' placeholder='endYear' style={{ width: 80 }}
-                    ref={el => this.endYear = el}></input>
-
-                <button onClick={this.filterYear}>-></button>
             </div>
         );
     }

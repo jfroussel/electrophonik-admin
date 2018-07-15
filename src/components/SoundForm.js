@@ -92,13 +92,12 @@ export default class SoundForm extends React.Component {
                 }
             );
 
-            console.log(this.props.onSubmitSound)
         }
     }
 
     render() {
         return (
-            <div>
+            <div className="pt-5">
                 {this.state.error && <p className='error'>{this.state.error}</p>}
 
                 <form onSubmit={this.onSubmit}>
@@ -138,29 +137,27 @@ export default class SoundForm extends React.Component {
                         ></textarea>
                         <small id="descriptionHelp" className="form-text text-muted">Description detaillée du morceau</small>
                     </div>
-                    <div className="form-group col-6">
+                    <div className="form-group col-2">
                         <input
                             type="text"
                             className="form-control"
                             id="BPM"
                             aria-describedby="BPMHelp"
-                            placeholder="Saisir le tempo du morceau"
                             value={this.state.bpm ? this.state.bpm : 0}
                             onChange={this.onBpmChange}
                         />
-                        <small id="auteurHelp" className="form-text text-muted">Saisir le BPM du titre</small>
+                        <small id="auteurHelp" className="form-text text-muted">BPM du titre</small>
                     </div>
-                    <div className="form-group col-6">
+                    <div className="form-group col-2">
                         <input
                             type="text"
                             className="form-control"
                             id="loops"
                             aria-describedby="LoopsHelp"
-                            placeholder="Combien de boucle(s) disponibles pour ce morceaux"
                             value={this.state.loops ? this.state.loops : 0}
                             onChange={this.onLoopsChange}
                         />
-                        <small id="auteurHelp" className="form-text text-muted">Saisir le BPM du titre</small>
+                        <small id="auteurHelp" className="form-text text-muted">Combien de LOOPS</small>
                     </div>
                     <div className="form-group col-6">
                         <Select

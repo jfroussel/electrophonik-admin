@@ -5,7 +5,7 @@ import { addSound } from '../actions/sounds';
 
 const AddSound = (props) => (
     <div>
-        <h3>Set Sound information:</h3>
+        
         <SoundForm
             onSubmitSound={(sound) => {
                 props.dispatch(addSound(sound));
