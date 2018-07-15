@@ -40,7 +40,7 @@ const SubComponent = () => {
             </div>
             <div className="col-4">
                 <ReactAudioPlayer
-                    src={Audio}
+                    src={AudioFixture}
                     autoPlay
                 />
             </div>
@@ -124,8 +124,8 @@ const SoundList = (props) => (
 
                             },
                             {
-                                Header: "Length",
-                                accessor: "length",
+                                Header: "Lenght",
+                                accessor: "lenght",
 
                             },
                             {
@@ -145,12 +145,14 @@ const SoundList = (props) => (
                             {
 
                                 id: 'edit',
-                                Cell: (({ original }) => <Link to={`/sound/${original.id}`} className="btn btn-primary">Edit</Link>)
+                                Cell: (({ original }) => <Link to={`/sound/${original.id}`} className="btn btn-primary">Edit</Link>),
+                              
                             },
                             {
 
                                 id: 'delete',
-                                Cell: (({ original }) => <button onClick={remove}>Delete</button>)
+                                Cell: (({ original }) => <button onClick={remove}>Delete</button>),
+                                
                             },
 
                         ]
@@ -172,8 +174,5 @@ const mapStateToProps = (state) => {
         sounds: getVisibleSounds(state.sounds, state.filters)
     };
 }
-
-
-
 
 export default connect(mapStateToProps)(SoundList);

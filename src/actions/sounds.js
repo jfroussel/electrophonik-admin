@@ -13,6 +13,7 @@ export const addSound = (soundData = {
     genres: [],
     moods: [],
     loops:'',
+    lenght:'',
    
 }) => {
     return (dispatch) => {
@@ -24,6 +25,7 @@ export const addSound = (soundData = {
             genres: soundData.genres,
             moods: soundData.moods,
             loops: soundData.loops,
+            lenght: soundData.lenght,
             
         };
 

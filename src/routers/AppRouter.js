@@ -9,7 +9,7 @@ import NotFound from '../components/NotFound';
 
 const AppRouter = () => (
     <BrowserRouter>
-        <div className='container'>
+        <div className='container-fluid'>
             <Header />
             <Switch>
                 <Route path="/" component={DashBoard} exact={true} />

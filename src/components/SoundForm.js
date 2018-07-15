@@ -12,6 +12,7 @@ export default class SoundForm extends React.Component {
         this.onAuthorChange = this.onAuthorChange.bind(this)
         this.onDescriptionChange = this.onDescriptionChange.bind(this)
         this.onBpmChange = this.onBpmChange.bind(this)
+        this.onLenghtChange = this.onLenghtChange.bind(this)
         this.onGenresChange = this.onGenresChange.bind(this)
         this.onMoodsChange = this.onMoodsChange.bind(this)
         this.onLoopsChange = this.onLoopsChange.bind(this)
@@ -24,6 +25,7 @@ export default class SoundForm extends React.Component {
             author: props.sound ? props.sound.author : '',
             description: props.sound ? props.sound.description : '',
             bpm: props.sound ? props.sound.bpm : '',
+            lenght: props.sound ? props.sound.lenght : '',
             genres: props.sound ? props.sound.genres : '',
             moods: props.sound ? props.sound.moods : '',
             loops: props.sound ? props.sound.loops : '',
@@ -49,6 +51,10 @@ export default class SoundForm extends React.Component {
     onBpmChange(e) {
         const bpm = parseInt(e.target.value, 10)
         this.setState(() => ({ bpm: bpm }))
+    }
+    onLenghtChange(e) {
+        const lenght = e.target.value
+        this.setState(() => ({ lenght: lenght }))
     }
 
     onLoopsChange(e) {
@@ -86,6 +92,7 @@ export default class SoundForm extends React.Component {
                     author: this.state.author,
                     description: this.state.description,
                     bpm: this.state.bpm,
+                    lenght: this.state.lenght,
                     genres: this.state.genres,
                     moods: this.state.moods,
                     loops: this.state.loops,
@@ -139,7 +146,7 @@ export default class SoundForm extends React.Component {
                     </div>
                     <div className="form-group col-2">
                         <input
-                            type="text"
+                            type="number"
                             className="form-control"
                             id="BPM"
                             aria-describedby="BPMHelp"
@@ -150,7 +157,22 @@ export default class SoundForm extends React.Component {
                     </div>
                     <div className="form-group col-2">
                         <input
-                            type="text"
+                            type="number"
+                            className="form-control"
+                            id="lenght"
+                            placeholder="1.0" 
+                            step="0.01" 
+                            min="0" 
+                            max="10"
+                            aria-describedby="LenghtHelp"
+                            value={this.state.lenght}
+                            onChange={this.onLenghtChange}
+                        />
+                        <small id="auteurHelp" className="form-text text-muted">Lenght du titre</small>
+                    </div>
+                    <div className="form-group col-2">
+                        <input
+                            type="number"
                             className="form-control"
                             id="loops"
                             aria-describedby="LoopsHelp"
