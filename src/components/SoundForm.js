@@ -65,26 +65,15 @@ export default class SoundForm extends React.Component {
 
     onGenresChange = (genres) => {
         this.setState({ genres })
-        // selectedOption can be null when the `x` (close) button is clicked
-        if (genres) {
-            console.log(`Selected: ${genres[0].value}`);
-        }
+       
     }
 
     onMoodsChange = (moods) => {
         this.setState({ moods });
-        // selectedOption can be null when the `x` (close) button is clicked
-        if (moods) {
-            console.log(`Selected: ${moods[0].value}`);
-        }
     }
 
     onInstrumentsChange = (instruments) => {
         this.setState({ instruments });
-        // selectedOption can be null when the `x` (close) button is clicked
-        if (instruments) {
-            console.log(`Selected: ${instruments[0].value}`);
-        }
     }
 
     onSubmit(e) {
