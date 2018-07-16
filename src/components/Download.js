@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import Dropzone from 'react-dropzone'
 
-class Download extends React.Component {
+class Download extends Component {
     constructor() {
       super()
       this.state = {

@@ -5,7 +5,6 @@ import Genres from './Genres'
 import Moods from './Moods'
 import Download from './Download'
 
-
 export default class SoundForm extends React.Component {
     constructor(props) {
         super(props)
@@ -77,7 +76,6 @@ export default class SoundForm extends React.Component {
         }
     }
 
-
     onSubmit(e) {
         e.preventDefault()
 
@@ -105,7 +103,6 @@ export default class SoundForm extends React.Component {
         return (
             <div className="pt-5">
                 {this.state.error && <p className='error'>{this.state.error}</p>}
-
                 <form onSubmit={this.onSubmit}>
                     <div className="form-group col-6">
                         <input
@@ -204,8 +201,6 @@ export default class SoundForm extends React.Component {
                     <div className="form-group col-6">
                         <Download />
                     </div>
-
-
                     <button type="submit" className="btn btn-primary">Ajouter le morceau</button>
                 </form>
             </div>

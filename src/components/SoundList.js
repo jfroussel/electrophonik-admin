@@ -1,6 +1,6 @@
 import React from 'react'
 import { connect } from 'react-redux'
-import Sound from './Sound'
+//import Sound from './Sound'
 import getVisibleSounds from '../selectors/sounds'
 import { Link } from 'react-router-dom';
 import { removeSound } from '../actions/sounds'

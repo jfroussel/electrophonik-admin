@@ -5,6 +5,9 @@ import { filterText, sortBy } from '../actions/filters';
 class SoundFilters extends React.Component {
     constructor(props) {
         super(props);
+        this.state = {
+            
+        }
     }
 
 
