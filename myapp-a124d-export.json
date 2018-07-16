@@ -1,0 +1,315 @@
+{
+  "members" : {
+    "C2r5pXbvlygdYnD8ssPXT8sJdue2" : {
+      "city" : "",
+      "country" : "",
+      "displayName" : "jeff rousse",
+      "email" : "info@jfroussel.co"
+    },
+    "ebg8zKBG6SSpXMYkQaiaybigEmf1" : {
+      "city" : "Paris",
+      "country" : "France",
+      "displayName" : "phone",
+      "email" : "toto@free.fr"
+    },
+    "feqjPgd7sgWRlpFfQBtZPvzkbO12" : {
+      "city" : "Paris",
+      "country" : "Francia",
+      "displayName" : "jeff roussel",
+      "email" : "jfroussel75@gmail.com"
+    }
+  },
+  "sounds" : {
+    "-LH91TVPohWAf2pQkN8X" : {
+      "author" : "jeff 1",
+      "bpm" : 115,
+      "description" : "sound 1",
+      "genres" : [ {
+        "label" : "Funk",
+        "value" : "Funk"
+      }, {
+        "label" : "Pop",
+        "value" : "Pop"
+      } ],
+      "lenght" : "0.53",
+      "loops" : 3,
+      "moods" : [ {
+        "label" : "Comedy / Funny",
+        "value" : "Comedy / Funny"
+      }, {
+        "label" : "Aggressive",
+        "value" : "Aggressive"
+      }, {
+        "label" : "Action / Sports",
+        "value" : "Action / Sports"
+      } ],
+      "published" : 1,
+      "title" : "sound 1"
+    },
+    "-LH9HuE4UFwAW-OsVdo8" : {
+      "author" : "roussel",
+      "description" : "sound 2",
+      "published" : 2,
+      "title" : "sound 2"
+    },
+    "-LHCAFQoxSShKlLrOoOp" : {
+      "author" : "jfr",
+      "bpm" : 123,
+      "description" : "soundcloud",
+      "genres" : [ {
+        "label" : "Jazz",
+        "value" : "Jazz"
+      }, {
+        "label" : "Blues",
+        "value" : "Blues"
+      }, {
+        "label" : "Classique",
+        "value" : "Classique"
+      } ],
+      "lenght" : "1.19",
+      "loops" : 2,
+      "moods" : [ {
+        "label" : "Comedy / Funny",
+        "value" : "Comedy / Funny"
+      }, {
+        "label" : "Crime / Triller /Spy",
+        "value" : "Crime / Triller /Spy"
+      }, {
+        "label" : "Epic /orchestral",
+        "value" : "Epic /orchestral"
+      } ],
+      "published" : 2,
+      "title" : "sound cloud"
+    },
+    "-LHCXPqXbQfY238lAmSu" : {
+      "author" : "jfroussel",
+      "description" : "sound 4",
+      "published" : 4,
+      "title" : "sound 4"
+    },
+    "-LHChr3EOEUak2txwyYh" : {
+      "author" : "larry carlton",
+      "bpm" : 150,
+      "description" : "top",
+      "genres" : [ {
+        "label" : "Funk",
+        "value" : "Funk"
+      }, {
+        "label" : "Rock",
+        "value" : "Rock"
+      } ],
+      "lenght" : "0.38",
+      "loops" : 4,
+      "moods" : [ {
+        "label" : "Aggressive",
+        "value" : "Aggressive"
+      } ],
+      "title" : "room 335"
+    },
+    "-LHDk_E-YBJY9pBpVJe6" : {
+      "author" : "sonny rollins",
+      "bpm" : 225,
+      "description" : "saxophone",
+      "genres" : [ {
+        "label" : "Blues",
+        "value" : "Blues"
+      }, {
+        "label" : "Rock",
+        "value" : "Rock"
+      }, {
+        "label" : "Classique",
+        "value" : "Classique"
+      } ],
+      "loops" : 10,
+      "moods" : [ {
+        "label" : "Comedy / Funny",
+        "value" : "Comedy / Funny"
+      }, {
+        "label" : "Adventure / Discovery",
+        "value" : "Adventure / Discovery"
+      }, {
+        "label" : "Epic /orchestral",
+        "value" : "Epic /orchestral"
+      } ],
+      "title" : "oleo"
+    },
+    "-LHEGx2PTHDcDwCk3bo1" : {
+      "author" : "select2",
+      "bpm" : 120,
+      "description" : "select2",
+      "genres" : [ {
+        "label" : "One",
+        "value" : "one"
+      }, {
+        "label" : "Two",
+        "value" : "two"
+      } ],
+      "lenght" : "0.57",
+      "loops" : 5,
+      "moods" : [ {
+        "label" : "One",
+        "value" : "one"
+      }, {
+        "label" : "Two",
+        "value" : "two"
+      } ],
+      "title" : "select2"
+    },
+    "-LHELekR_kI2c-uxRrvR" : {
+      "author" : "jeff roussel",
+      "bpm" : 120,
+      "description" : "tres beau morceau",
+      "genres" : [ {
+        "label" : "Funk",
+        "value" : "Funk"
+      }, {
+        "label" : "Rock",
+        "value" : "Rock"
+      }, {
+        "label" : "Ambient",
+        "value" : "Ambient"
+      }, {
+        "label" : "Cinematic",
+        "value" : "Cinematic"
+      }, {
+        "label" : "Easy listening",
+        "value" : "Easy listening"
+      } ],
+      "lenght" : "0.59",
+      "loops" : 3,
+      "moods" : [ {
+        "label" : "Adventure / Discovery",
+        "value" : "Adventure / Discovery"
+      }, {
+        "label" : "Dark / Samber",
+        "value" : "Dark / Samber"
+      }, {
+        "label" : "Comedy / Funny",
+        "value" : "Comedy / Funny"
+      } ],
+      "title" : "ma belle chanson"
+    },
+    "-LHEObVFiILqDVwMe2lq" : {
+      "author" : "jeff roussel",
+      "bpm" : 120,
+      "description" : "morceau de charlie parker",
+      "genres" : [ {
+        "label" : "Jazz",
+        "value" : "Jazz"
+      }, {
+        "label" : "Blues",
+        "value" : "Blues"
+      }, {
+        "label" : "Rock",
+        "value" : "Rock"
+      } ],
+      "loops" : 6,
+      "moods" : [ {
+        "label" : "Happy / Cheerful",
+        "value" : "Happy / Cheerful"
+      }, {
+        "label" : "Aggressive",
+        "value" : "Aggressive"
+      } ],
+      "title" : "billie's bounce"
+    },
+    "-LHERXVCwMUQ5gNCy5Sh" : {
+      "author" : "charlie parker",
+      "bpm" : 140,
+      "description" : "bebop",
+      "genres" : [ {
+        "label" : "Jazz",
+        "value" : "Jazz"
+      }, {
+        "label" : "Blues",
+        "value" : "Blues"
+      } ],
+      "loops" : 4,
+      "moods" : [ {
+        "label" : "Dark / Samber",
+        "value" : "Dark / Samber"
+      }, {
+        "label" : "Adventure / Discovery",
+        "value" : "Adventure / Discovery"
+      } ],
+      "title" : "scrapple"
+    },
+    "-LHEXZej3ZoNTE3LJIV7" : {
+      "author" : "jeff roussel",
+      "bpm" : 120,
+      "description" : "test",
+      "genres" : [ {
+        "label" : "Jazz",
+        "value" : "Jazz"
+      }, {
+        "label" : "Blues",
+        "value" : "Blues"
+      } ],
+      "loops" : 5,
+      "moods" : [ {
+        "label" : "Aggressive",
+        "value" : "Aggressive"
+      }, {
+        "label" : "Dark / Samber",
+        "value" : "Dark / Samber"
+      } ],
+      "title" : "my theme"
+    },
+    "-LHHjXZwv6DRb0z12H__" : {
+      "author" : "sonny rollins",
+      "bpm" : 143,
+      "description" : "test",
+      "genres" : [ {
+        "label" : "Jazz",
+        "value" : "Jazz"
+      }, {
+        "label" : "Pop",
+        "value" : "Pop"
+      }, {
+        "label" : "Classique",
+        "value" : "Classique"
+      } ],
+      "lenght" : "1.18",
+      "loops" : 6,
+      "moods" : [ {
+        "label" : "Adventure / Discovery",
+        "value" : "Adventure / Discovery"
+      }, {
+        "label" : "Crime / Triller /Spy",
+        "value" : "Crime / Triller /Spy"
+      }, {
+        "label" : "Epic /orchestral",
+        "value" : "Epic /orchestral"
+      } ],
+      "title" : "test jeff"
+    },
+    "-LHWsP-XlI8uo8RnfRur" : {
+      "author" : "jfr",
+      "bpm" : 120,
+      "description" : "musique d'ambiance",
+      "genres" : [ {
+        "label" : "Funk",
+        "value" : "Funk"
+      }, {
+        "label" : "Jazz",
+        "value" : "Jazz"
+      }, {
+        "label" : "Blues",
+        "value" : "Blues"
+      } ],
+      "lenght" : "1.22",
+      "loops" : 6,
+      "moods" : [ {
+        "label" : "Action / Sports",
+        "value" : "Action / Sports"
+      }, {
+        "label" : "Crime / Triller /Spy",
+        "value" : "Crime / Triller /Spy"
+      }, {
+        "label" : "Dark / Samber",
+        "value" : "Dark / Samber"
+      } ],
+      "title" : "love music"
+    }
+  }
+}

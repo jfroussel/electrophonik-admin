@@ -3,6 +3,7 @@ import Select from 'react-select'
 import 'react-select/dist/react-select.css'
 import Genres from './Genres'
 import Moods from './Moods'
+import Instruments from './Instruments'
 import Download from './Download'
 
 export default class SoundForm extends React.Component {
@@ -16,6 +17,7 @@ export default class SoundForm extends React.Component {
         this.onGenresChange = this.onGenresChange.bind(this)
         this.onMoodsChange = this.onMoodsChange.bind(this)
         this.onLoopsChange = this.onLoopsChange.bind(this)
+        this.onInstrumentsChange = this.onInstrumentsChange.bind(this)
         this.onSubmit = this.onSubmit.bind(this)
 
         this.state = {
@@ -27,6 +29,7 @@ export default class SoundForm extends React.Component {
             genres: props.sound ? props.sound.genres : '',
             moods: props.sound ? props.sound.moods : '',
             loops: props.sound ? props.sound.loops : '',
+            instruments: props.sound ? props.sound.instruments: '',
             error: ''
         };
     }
@@ -76,6 +79,14 @@ export default class SoundForm extends React.Component {
         }
     }
 
+    onInstrumentsChange = (instruments) => {
+        this.setState({ instruments });
+        // selectedOption can be null when the `x` (close) button is clicked
+        if (instruments) {
+            console.log(`Selected: ${instruments[0].value}`);
+        }
+    }
+
     onSubmit(e) {
         e.preventDefault()
 
@@ -93,6 +104,7 @@ export default class SoundForm extends React.Component {
                     genres: this.state.genres,
                     moods: this.state.moods,
                     loops: this.state.loops,
+                    instruments: this.state.instruments,
                 }
             );
 
@@ -105,6 +117,7 @@ export default class SoundForm extends React.Component {
                 {this.state.error && <p className='error'>{this.state.error}</p>}
                 <form onSubmit={this.onSubmit}>
                     <div className="form-group col-6">
+                        <label>Titre</label>
                         <input
                             type="text"
                             className="form-control"
@@ -115,9 +128,9 @@ export default class SoundForm extends React.Component {
                             value={this.state.title}
                             onChange={this.onTitleChange}
                         />
-                        <small id="titleHelp" className="form-text text-muted">Saisir le titre du morceau</small>
                     </div>
                     <div className="form-group col-6">
+                        <label>Auteur</label>
                         <input
                             type="text"
                             className="form-control"
@@ -127,9 +140,9 @@ export default class SoundForm extends React.Component {
                             value={this.state.author}
                             onChange={this.onAuthorChange}
                         />
-                        <small id="auteurHelp" className="form-text text-muted">Saisir l'auteur du morceau Nom/prenom ou pseudo</small>
                     </div>
                     <div className="form-group col-6">
+                        <label>Description</label>
                         <textarea
                             className="form-control"
                             id="description"
@@ -138,66 +151,83 @@ export default class SoundForm extends React.Component {
                             value={this.state.description}
                             onChange={this.onDescriptionChange}
                         ></textarea>
-                        <small id="descriptionHelp" className="form-text text-muted">Description detaillée du morceau</small>
                     </div>
-                    <div className="form-group col-2">
-                        <input
-                            type="number"
-                            className="form-control"
-                            id="BPM"
-                            aria-describedby="BPMHelp"
-                            value={this.state.bpm ? this.state.bpm : 0}
-                            onChange={this.onBpmChange}
-                        />
-                        <small id="auteurHelp" className="form-text text-muted">Tempo(BPM) du morceau</small>
-                    </div>
-                    <div className="form-group col-2">
-                        <input
-                            type="number"
-                            className="form-control"
-                            id="lenght"
-                            placeholder="0.01"
-                            step="0.01"
-                            min="0"
-                            max="10"
-                            aria-describedby="LenghtHelp"
-                            value={this.state.lenght}
-                            onChange={this.onLenghtChange}
-                            
-                        />
-                        <small id="auteurHelp" className="form-text text-muted">durée(Lenght) du titre</small>
-                    </div>
-                    <div className="form-group col-2">
-                        <input
-                            type="number"
-                            className="form-control"
-                            id="loops"
-                            aria-describedby="LoopsHelp"
-                            value={this.state.loops ? this.state.loops : 0}
-                            onChange={this.onLoopsChange}
-                        />
-                        <small id="auteurHelp" className="form-text text-muted">Nombre de boucles (Loops)</small>
-                    </div>
-                    <div className="form-group col-6">
-                        <Select
-                            name="genres"
-                            placeholder="Selectionner le(s) genre(s)"
-                            multi={true}
-                            value={this.state.genres}
-                            onChange={this.onGenresChange}
-                            options={Genres}
-                        />
-                    </div>
+                    <div className="row col-6">
 
-                    <div className="form-group col-6">
-                        <Select
-                            name="moods"
-                            placeholder="Selectionner le(s) ambiance(s)"
-                            multi={true}
-                            value={this.state.moods}
-                            onChange={this.onMoodsChange}
-                            options={Moods}
-                        />
+                        <div className="form-group col-3">
+                            <label>Bpm</label>
+                            <input
+                                type="number"
+                                className="form-control"
+                                id="BPM"
+                                aria-describedby="BPMHelp"
+                                value={this.state.bpm ? this.state.bpm : 0}
+                                onChange={this.onBpmChange}
+                            />
+                        </div>
+                        <div className="form-group col-3">
+                            <label>Durée</label>
+                            <input
+                                type="number"
+                                className="form-control"
+                                id="lenght"
+                                placeholder="0.01"
+                                step="0.01"
+                                min="0"
+                                max="10"
+                                aria-describedby="LenghtHelp"
+                                value={this.state.lenght}
+                                onChange={this.onLenghtChange}
+
+                            />
+                        </div>
+                        <div className="form-group col-3">
+                            <label>Nombre de boucles</label>
+                            <input
+                                type="number"
+                                className="form-control"
+                                id="loops"
+                                aria-describedby="LoopsHelp"
+                                value={this.state.loops ? this.state.loops : 0}
+                                onChange={this.onLoopsChange}
+                            />
+                        </div>
+                    </div>
+                    <div className="row col-6">
+                        <div className="form-group col-4">
+                            <label>Genres</label>
+                            <Select
+                                name="genres"
+                                placeholder="Selectionner le(s) genre(s)"
+                                multi={true}
+                                value={this.state.genres}
+                                onChange={this.onGenresChange}
+                                options={Genres}
+                            />
+                        </div>
+
+                        <div className="form-group col-4">
+                            <label>Ambiances</label>
+                            <Select
+                                name="moods"
+                                placeholder="Selectionner le(s) ambiance(s)"
+                                multi={true}
+                                value={this.state.moods}
+                                onChange={this.onMoodsChange}
+                                options={Moods}
+                            />
+                        </div>
+                        <div className="form-group col-4">
+                            <label>Instruments</label>
+                            <Select
+                                name="instruments"
+                                placeholder="Selectionner le(s) instruments(s)"
+                                multi={true}
+                                value={this.state.instruments}
+                                onChange={this.onInstrumentsChange}
+                                options={Instruments}
+                            />
+                        </div>
                     </div>
                     <div className="form-group col-6">
                         <Download />

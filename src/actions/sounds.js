@@ -14,6 +14,7 @@ export const addSound = (soundData = {
     moods: [],
     loops:'',
     lenght:'',
+    instruments: '',
    
 }) => {
     return (dispatch) => {
@@ -26,6 +27,7 @@ export const addSound = (soundData = {
             moods: soundData.moods,
             loops: soundData.loops,
             lenght: soundData.lenght,
+            instruments: soundData.instruments,
             
         };
 
