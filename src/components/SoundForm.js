@@ -3,6 +3,7 @@ import Select from 'react-select'
 import 'react-select/dist/react-select.css'
 import Genres from './Genres'
 import Moods from './Moods'
+import Download from './Download'
 
 
 export default class SoundForm extends React.Component {
@@ -17,8 +18,6 @@ export default class SoundForm extends React.Component {
         this.onMoodsChange = this.onMoodsChange.bind(this)
         this.onLoopsChange = this.onLoopsChange.bind(this)
         this.onSubmit = this.onSubmit.bind(this)
-        
-
 
         this.state = {
             title: props.sound ? props.sound.title : '',
@@ -153,22 +152,22 @@ export default class SoundForm extends React.Component {
                             value={this.state.bpm ? this.state.bpm : 0}
                             onChange={this.onBpmChange}
                         />
-                        <small id="auteurHelp" className="form-text text-muted">BPM du titre</small>
+                        <small id="auteurHelp" className="form-text text-muted">Tempo(BPM) du morceau</small>
                     </div>
                     <div className="form-group col-2">
                         <input
                             type="number"
                             className="form-control"
                             id="lenght"
-                            placeholder="1.0" 
-                            step="0.01" 
-                            min="0" 
+                            placeholder="1.0"
+                            step="0.01"
+                            min="0"
                             max="10"
                             aria-describedby="LenghtHelp"
                             value={this.state.lenght}
                             onChange={this.onLenghtChange}
                         />
-                        <small id="auteurHelp" className="form-text text-muted">Lenght du titre</small>
+                        <small id="auteurHelp" className="form-text text-muted">durée(Lenght) du titre</small>
                     </div>
                     <div className="form-group col-2">
                         <input
@@ -179,7 +178,7 @@ export default class SoundForm extends React.Component {
                             value={this.state.loops ? this.state.loops : 0}
                             onChange={this.onLoopsChange}
                         />
-                        <small id="auteurHelp" className="form-text text-muted">Combien de LOOPS</small>
+                        <small id="auteurHelp" className="form-text text-muted">Nombre de boucles (Loops)</small>
                     </div>
                     <div className="form-group col-6">
                         <Select
@@ -201,6 +200,9 @@ export default class SoundForm extends React.Component {
                             onChange={this.onMoodsChange}
                             options={Moods}
                         />
+                    </div>
+                    <div className="form-group col-6">
+                        <Download />
                     </div>
 
 
