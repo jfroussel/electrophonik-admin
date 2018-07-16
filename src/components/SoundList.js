@@ -17,7 +17,7 @@ const style = {
         border: 'solid 1px #6c757d',
         padding: '10px 10px',
         fontWeight: '200',
-        color: '#fff'
+        color: '#C7C7C7'
     },
     header: {
         textAlign: 'left',
@@ -27,7 +27,7 @@ const style = {
 
 }
 
-const SubComponent = () => {
+const SubComponent = (props) => {
     return (
         <div className="row" style={style.subComponent}>
             <div className="col-2">
@@ -37,6 +37,7 @@ const SubComponent = () => {
                 Title : Across The Border <br />
                 Tags : jazz, blues, rock <br />
                 loops details : details des boucles disponiblent <br />
+                description : {JSON.stringify(props)}
             </div>
             <div className="col-4">
                 <ReactAudioPlayer
@@ -54,6 +55,7 @@ const SubComponent = () => {
 const editRow = (value) => {
     console.log(value.original.id)
 }
+
 const remove = () => {
     confirmAlert({
       title: 'Confirmation de suppression',

@@ -2,8 +2,8 @@ import React, { Component } from 'react';
 import Dropzone from 'react-dropzone'
 
 class Download extends Component {
-    constructor() {
-      super()
+    constructor(props) {
+      super(props)
       this.state = {
         accepted: [],
         rejected: []
@@ -23,16 +23,16 @@ class Download extends Component {
             </Dropzone>
           </div>
           <aside>
-            <h2>Accepted files</h2>
+           
             <ul>
               {
-                this.state.accepted.map(f => <li key={f.name}>{f.name} - {f.size} bytes</li>)
+                this.state.accepted.map(f => <li key={f.name}>{f.name} <br /> {f.size} bytes</li>)
               }
             </ul>
-            <h2>Rejected files</h2>
+            
             <ul>
               {
-                this.state.rejected.map(f => <li key={f.name}>{f.name} - {f.size} bytes</li>)
+                this.state.rejected.map(f => <li key={f.name}>{f.name} <br /> {f.size} bytes</li>)
               }
             </ul>
           </aside>

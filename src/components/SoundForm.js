@@ -156,13 +156,14 @@ export default class SoundForm extends React.Component {
                             type="number"
                             className="form-control"
                             id="lenght"
-                            placeholder="1.0"
+                            placeholder="0.01"
                             step="0.01"
                             min="0"
                             max="10"
                             aria-describedby="LenghtHelp"
                             value={this.state.lenght}
                             onChange={this.onLenghtChange}
+                            
                         />
                         <small id="auteurHelp" className="form-text text-muted">durée(Lenght) du titre</small>
                     </div>
