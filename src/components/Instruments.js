@@ -43,6 +43,13 @@ const Instruments = [
     {value:'Violin', label:'Violin'},
     {value:'Fiddle', label:'Fiddle'},
     {value:'Xylophone', label:'Xylophone'},
+    {value:'Taikos', label:'Taikos'},
+    {value:'Toms', label:'Toms'},
+    {value:'Choir', label:'Choir'},
+    {value:'Electric bass', label:'Electric bass'},
+    {value:'Mandoline', label:'Mandoline'},
+    {value:'HitHat', label:'HitHat'},
+    {value:'Fx', label:'Fx'},
 ]
 
 export default Instruments

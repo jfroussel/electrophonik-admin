@@ -10,7 +10,7 @@ import Album from '../assets/logo.png'
 import AudioFixture from '../assets/audio/audioTest.mp3'
 import ReactAudioPlayer from 'react-audio-player'
 import { confirmAlert } from 'react-confirm-alert'
-import 'react-confirm-alert/src/react-confirm-alert.css' 
+import 'react-confirm-alert/src/react-confirm-alert.css'
 
 const style = {
     subComponent: {
@@ -27,7 +27,7 @@ const style = {
 
 }
 
-const SubComponent = (props) => {
+const SubComponent = () => {
     return (
         <div className="row" style={style.subComponent}>
             <div className="col-2">
@@ -37,7 +37,7 @@ const SubComponent = (props) => {
                 Title : Across The Border <br />
                 Tags : jazz, blues, rock <br />
                 loops details : details des boucles disponiblent <br />
-                description : {JSON.stringify(props)}
+                description :
             </div>
             <div className="col-4">
                 <ReactAudioPlayer
@@ -52,31 +52,33 @@ const SubComponent = (props) => {
     )
 }
 
-const editRow = (value) => {
-    console.log(value.original.id)
-}
 
-const remove = () => {
+
+const remove = (id) => {
     confirmAlert({
-      title: 'Confirmation de suppression',
-      message: 'Etes vous certain de vouloir supprimer définitivement ce morceau ?',
-      buttons: [
-        {
-          label: 'Oui',
-          onClick: () => console.log('le morceau a été supprimé')
-        },
-        {
-          label: 'Non',
-          onClick: () => console.log('la suppression a été annulée !')
-        }
-      ]
+        title: 'Confirmation de suppression',
+        message: 'Etes vous certain de vouloir supprimer définitivement ce morceau ?',
+        buttons: [
+            {
+                label: 'Oui',
+                onClick: () => {
+                    return (dispatch) => {
+                        console.log(id)
+                        dispatch(removeSound({ id }))
+                    }
+                } 
+            },
+            {
+                label: 'Non',
+                onClick: () => console.log('la suppression a été annulée !')
+            }
+        ]
     })
-  };
+};
 
 
 const SoundList = (props) => (
     <div className="pt-5">
-
         <div>
             <ReactTable
                 data={props.sounds}
@@ -148,15 +150,14 @@ const SoundList = (props) => (
 
                                 id: 'edit',
                                 Cell: (({ original }) => <Link to={`/sound/${original.id}`} className="btn btn-primary">Edit</Link>),
-                              
+
                             },
                             {
 
                                 id: 'delete',
-                                Cell: (({ original }) => <button onClick={remove}>Delete</button>),
-                                
-                            },
+                                Cell: (({ original }) => <button onClick={() => remove(original.id)}>Delete</button>),
 
+                            },
                         ]
                     },
                 ]}
@@ -176,5 +177,8 @@ const mapStateToProps = (state) => {
         sounds: getVisibleSounds(state.sounds, state.filters)
     };
 }
+
+
+
 
 export default connect(mapStateToProps)(SoundList);
