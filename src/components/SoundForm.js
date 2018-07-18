@@ -19,8 +19,10 @@ export default class SoundForm extends React.Component {
         this.onLoopsChange = this.onLoopsChange.bind(this)
         this.onInstrumentsChange = this.onInstrumentsChange.bind(this)
         this.onSubmit = this.onSubmit.bind(this)
+       
 
         this.state = {
+           
             title: props.sound ? props.sound.title : '',
             author: props.sound ? props.sound.author : '',
             description: props.sound ? props.sound.description : '',
@@ -29,7 +31,7 @@ export default class SoundForm extends React.Component {
             genres: props.sound ? props.sound.genres : '',
             moods: props.sound ? props.sound.moods : '',
             loops: props.sound ? props.sound.loops : '',
-            instruments: props.sound ? props.sound.instruments: '',
+            instruments: props.sound ? props.sound.instruments : '',
             error: ''
         };
     }
@@ -65,7 +67,7 @@ export default class SoundForm extends React.Component {
 
     onGenresChange = (genres) => {
         this.setState({ genres })
-       
+
     }
 
     onMoodsChange = (moods) => {
@@ -76,6 +78,8 @@ export default class SoundForm extends React.Component {
         this.setState({ instruments });
     }
 
+   
+
     onSubmit(e) {
         e.preventDefault()
 
@@ -85,6 +89,7 @@ export default class SoundForm extends React.Component {
             this.setState(() => ({ error: '' }))
             this.props.onSubmitSound(
                 {
+                   
                     title: this.state.title,
                     author: this.state.author,
                     description: this.state.description,
@@ -221,7 +226,8 @@ export default class SoundForm extends React.Component {
                     <div className="form-group col-6">
                         <Download />
                     </div>
-                    <button type="submit" className="btn btn-primary">Ajouter le morceau</button>
+                    <button type="submit" className="btn btn-primary">Enregistrer</button>
+                    
                 </form>
             </div>
         );

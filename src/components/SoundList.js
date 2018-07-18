@@ -1,6 +1,6 @@
 import React from 'react'
 import { connect } from 'react-redux'
-//import Sound from './Sound'
+import firebase from 'firebase'
 import getVisibleSounds from '../selectors/sounds'
 import { Link } from 'react-router-dom';
 import { removeSound } from '../actions/sounds'
@@ -24,10 +24,9 @@ const style = {
         color: '#ffffff',
         backgroundColor: '#000'
     }
-
 }
 
-const SubComponent = () => {
+const SubComponent = (props) => {
     return (
         <div className="row" style={style.subComponent}>
             <div className="col-2">
@@ -37,7 +36,7 @@ const SubComponent = () => {
                 Title : Across The Border <br />
                 Tags : jazz, blues, rock <br />
                 loops details : details des boucles disponiblent <br />
-                description :
+                description : {JSON.stringify(props)}
             </div>
             <div className="col-4">
                 <ReactAudioPlayer
@@ -53,20 +52,19 @@ const SubComponent = () => {
 }
 
 
-
-const remove = (id) => {
+const remove = (id, title) => {
     confirmAlert({
-        title: 'Confirmation de suppression',
+        title: 'Suppression de ' + title,
         message: 'Etes vous certain de vouloir supprimer définitivement ce morceau ?',
         buttons: [
             {
                 label: 'Oui',
                 onClick: () => {
-                    return (dispatch) => {
-                        console.log(id)
-                        dispatch(removeSound({ id }))
-                    }
-                } 
+                    firebase.database().ref('sounds').child(id).remove().then(() => {
+                        window.location.reload()
+                    })
+
+                }
             },
             {
                 label: 'Non',
@@ -76,9 +74,9 @@ const remove = (id) => {
     })
 };
 
-
 const SoundList = (props) => (
     <div className="pt-5">
+
         <div>
             <ReactTable
                 data={props.sounds}
@@ -155,9 +153,11 @@ const SoundList = (props) => (
                             {
 
                                 id: 'delete',
-                                Cell: (({ original }) => <button onClick={() => remove(original.id)}>Delete</button>),
+                                Cell: (({ original }) => <button onClick={() => remove(original.id, original.title)}>Delete</button>),
 
                             },
+                            
+
                         ]
                     },
                 ]}
@@ -177,8 +177,5 @@ const mapStateToProps = (state) => {
         sounds: getVisibleSounds(state.sounds, state.filters)
     };
 }
-
-
-
 
 export default connect(mapStateToProps)(SoundList);
