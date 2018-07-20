@@ -5,6 +5,7 @@ import Genres from './Genres'
 import Moods from './Moods'
 import Instruments from './Instruments'
 import Download from './Download'
+import Upload from './Upload'
 
 export default class SoundForm extends React.Component {
     constructor(props) {
@@ -186,6 +187,10 @@ export default class SoundForm extends React.Component {
                                 onChange={this.onLoopsChange}
                             />
                         </div>
+                        <div className="form-group col-3">
+                            <label>Track</label>
+                            <Upload author={this.state.author}/>
+                        </div>
                     </div>
                     <div className="row col-6">
                         <div className="form-group col-4">
@@ -223,9 +228,7 @@ export default class SoundForm extends React.Component {
                             />
                         </div>
                     </div>
-                    <div className="form-group col-6">
-                        <Download />
-                    </div>
+                    
                     <button type="submit" className="btn btn-primary">Enregistrer</button>
                     
                 </form>
