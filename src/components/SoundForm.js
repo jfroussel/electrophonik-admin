@@ -7,6 +7,7 @@ import Instruments from './Instruments'
 import Download from './Download'
 import Upload from './Upload'
 
+
 export default class SoundForm extends React.Component {
     constructor(props) {
         super(props)
@@ -79,7 +80,6 @@ export default class SoundForm extends React.Component {
         this.setState({ instruments });
     }
 
-   
 
     onSubmit(e) {
         e.preventDefault()
@@ -102,7 +102,6 @@ export default class SoundForm extends React.Component {
                     instruments: this.state.instruments,
                 }
             );
-
         }
     }
 
