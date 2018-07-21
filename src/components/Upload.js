@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import firebase from 'firebase';
 import FileUploader from 'react-firebase-file-uploader';
 import CustomUploadButton from 'react-firebase-file-uploader/lib/CustomUploadButton';
+import { Progress } from 'react-sweet-progress';
+import "react-sweet-progress/lib/style.css";
 
 
 class Upload extends Component {
@@ -29,8 +31,9 @@ class Upload extends Component {
 
 
                 {this.state.isUploading &&
-                    <p>Progress: {this.state.progress}</p>
+                   <Progress percent={this.state.progress}  />
                 }
+                
 
                 <CustomUploadButton
                     accept="image/audio/*"
@@ -41,7 +44,7 @@ class Upload extends Component {
                     onUploadError={this.handleUploadError}
                     onUploadSuccess={this.handleUploadSuccess}
                     onProgress={this.handleProgress}
-                    style={{ backgroundColor: '#007bff', color: 'white', padding: 10, borderRadius: 4 }}
+                    style={{ backgroundColor: 'gray',cursor:'pointer', color: 'white', padding: 10, borderRadius: 4 }}
                 >
                     Upload your track
                 </CustomUploadButton>

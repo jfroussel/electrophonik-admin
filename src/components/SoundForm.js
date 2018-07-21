@@ -227,10 +227,10 @@ export default class SoundForm extends React.Component {
                                 options={Instruments}
                             />
                         </div>
+                        <div className="row col-6">
+                            <button type="submit" className="btn btn-lg btn-primary">Enregistrer</button>
+                        </div>
                     </div>
-                    
-                    <button type="submit" className="btn btn-primary">Enregistrer</button>
-                    
                 </form>
             </div>
         );
