@@ -34,8 +34,6 @@ class Upload extends Component {
     render() {
         return (
             <div>
-
-
                 {this.state.isUploading &&
                    <Progress percent={this.state.progress}  />
                 }
@@ -54,10 +52,11 @@ class Upload extends Component {
                 >
                     Télécharger
                 </CustomUploadButton>
+                <ToastContainer />
             </div>
             
         );
-        <ToastContainer />
+        
     }
 }
 export default Upload;

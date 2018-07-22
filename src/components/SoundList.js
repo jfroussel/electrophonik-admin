@@ -81,28 +81,7 @@ const SoundList = (props) => (
             <ReactTable
                 data={props.sounds}
                 columns={[
-                    {
-
-                        columns: [
-                            {
-                                expander: true,
-                                width: 65,
-                                Expander: ({ isExpanded, ...rest }) =>
-                                    <div>
-                                        {isExpanded
-                                            ? <span>&#x229D;</span>
-                                            : <span>&#x2295;</span>}
-                                    </div>,
-                                style: {
-                                    cursor: "pointer",
-                                    fontSize: 25,
-                                    padding: "0",
-                                    textAlign: "left",
-                                    userSelect: "none"
-                                },
-                            }
-                        ]
-                    },
+                    
                     {
                         columns: [
                             {
@@ -140,11 +119,6 @@ const SoundList = (props) => (
                                 },
                             },
                             {
-                                Header: "Description",
-                                accessor: "description",
-
-                            },
-                            {
 
                                 id: 'edit',
                                 Cell: (({ original }) => <Link to={`/sound/${original.id}`} className="btn btn-primary">Edit</Link>),
@@ -166,7 +140,6 @@ const SoundList = (props) => (
                 sortable={true}
                 noDataText="No data found !"
                 className="-striped -highlight"
-                SubComponent={() => <div style={{ padding: '10px' }}><SubComponent /></div>}
             />
         </div>
     </div>
