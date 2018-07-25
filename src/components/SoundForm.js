@@ -4,7 +4,6 @@ import 'react-select/dist/react-select.css'
 import Genres from './Genres'
 import Moods from './Moods'
 import Instruments from './Instruments'
-import Download from './Download'
 import Upload from './Upload'
 
 
@@ -42,13 +41,30 @@ export default class SoundForm extends React.Component {
 
     
     componentWillMount() {
-        console.log('props : ',this.props)
+        console.log('component will mount : ',this.props)
         
     }
     componentWillUpdate() {
-        console.log('cwUpdate : ',this.props)
+        console.log('component will update : ',this.props)
         
     }
+
+    componentDidMount() {
+        console.log('component did mount : ',this.props)
+
+    }
+
+    componentDidUpdate() {
+        console.log('component did update : ',this.props)
+
+    }
+
+    componentWillReceiveProps() {
+        console.log('component will receive props : ',this.props)
+
+    }
+
+    
 
     onTitleChange(e) {
         const title = e.target.value
@@ -160,7 +176,7 @@ export default class SoundForm extends React.Component {
                             id="filename"
                             aria-describedby="filenameHelp"
                             placeholder="Nom du fichier"
-                            value={this.state.filename ? this.filename : ''}
+                            value={this.state.filename}
                             onChange={this.onFilenameChange}
                         />
                     </div>
@@ -217,7 +233,7 @@ export default class SoundForm extends React.Component {
                         </div>
                         <div className="form-group col-3">
                             <label>Track</label>
-                            <Upload author={this.state.author}/>
+                            <Upload author={this.state.author} filename={this.state.filename}/>
                         </div>
                     </div>
                     <div className="row col-6">

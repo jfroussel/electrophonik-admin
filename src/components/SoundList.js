@@ -3,12 +3,9 @@ import { connect } from 'react-redux'
 import firebase from 'firebase'
 import getVisibleSounds from '../selectors/sounds'
 import { Link } from 'react-router-dom';
-import { removeSound } from '../actions/sounds'
+//import { removeSound } from '../actions/sounds'
 import ReactTable from "react-table"
 import "react-table/react-table.css"
-import Album from '../assets/logo.png'
-import AudioFixture from '../assets/audio/audioTest.mp3'
-import ReactAudioPlayer from 'react-audio-player'
 import { confirmAlert } from 'react-confirm-alert'
 import 'react-confirm-alert/src/react-confirm-alert.css'
 
@@ -26,30 +23,6 @@ const style = {
     }
 }
 
-const SubComponent = (props) => {
-    return (
-        <div className="row" style={style.subComponent}>
-            <div className="col-2">
-                <img src={Album} alt="album" width="200px" />
-            </div>
-            <div className="col-4">
-                Title : Across The Border <br />
-                Tags : jazz, blues, rock <br />
-                loops details : details des boucles disponiblent <br />
-                description : {JSON.stringify(props)}
-            </div>
-            <div className="col-4">
-                <ReactAudioPlayer
-                    src={AudioFixture}
-                    autoPlay
-                />
-            </div>
-            <div className="col-2">
-                tune actions
-            </div>
-        </div>
-    )
-}
 
 
 const remove = (id, title) => {
