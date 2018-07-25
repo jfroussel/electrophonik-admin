@@ -12,6 +12,7 @@ export default class SoundForm extends React.Component {
     constructor(props) {
         super(props)
         this.onTitleChange = this.onTitleChange.bind(this)
+        this.onFilenameChange = this.onFilenameChange.bind(this)
         this.onAuthorChange = this.onAuthorChange.bind(this)
         this.onDescriptionChange = this.onDescriptionChange.bind(this)
         this.onBpmChange = this.onBpmChange.bind(this)
@@ -26,6 +27,7 @@ export default class SoundForm extends React.Component {
         this.state = {
            
             title: props.sound ? props.sound.title : '',
+            filename: props.sound ? props.sound.filename :'',
             author: props.sound ? props.sound.author : '',
             description: props.sound ? props.sound.description : '',
             bpm: props.sound ? props.sound.bpm : '',
@@ -38,9 +40,23 @@ export default class SoundForm extends React.Component {
         };
     }
 
+    
+    componentWillMount() {
+        console.log('props : ',this.props)
+        
+    }
+    componentWillUpdate() {
+        console.log('cwUpdate : ',this.props)
+        
+    }
+
     onTitleChange(e) {
         const title = e.target.value
         this.setState(() => ({ title: title }))
+    }
+    onFilenameChange(e) {
+        const filename = e.target.value
+        this.setState(() => ({ filename: filename }))
     }
 
     onAuthorChange(e) {
@@ -92,14 +108,15 @@ export default class SoundForm extends React.Component {
                 {
                    
                     title: this.state.title,
+                    filename: this.state.filename ? this.state.filename : '',
                     author: this.state.author,
                     description: this.state.description,
                     bpm: this.state.bpm,
                     lenght: this.state.lenght,
-                    genres: this.state.genres,
-                    moods: this.state.moods,
-                    loops: this.state.loops,
-                    instruments: this.state.instruments,
+                    genres: this.state.genres ? this.state.genres : '',
+                    moods: this.state.moods ? this.state.moods : '',
+                    loops: this.state.loops ? this.state.loops : '',
+                    instruments: this.state.instruments ? this.state.instruments : '',
                 }
             );
         }
@@ -133,6 +150,18 @@ export default class SoundForm extends React.Component {
                             placeholder="Auteur"
                             value={this.state.author}
                             onChange={this.onAuthorChange}
+                        />
+                    </div>
+                    <div className="form-group col-6">
+                        <label>Nom du fichier</label>
+                        <input
+                            type="text"
+                            className="form-control"
+                            id="filename"
+                            aria-describedby="filenameHelp"
+                            placeholder="Nom du fichier"
+                            value={this.state.filename ? this.filename : ''}
+                            onChange={this.onFilenameChange}
                         />
                     </div>
                     <div className="form-group col-6">

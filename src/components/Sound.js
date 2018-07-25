@@ -13,7 +13,7 @@ const style = {
 
 }
 
-const Sound = ({ id, title, description, author, bpm, loops, moods, genres, dispatch }) => (
+const Sound = ({ id, title, filename, description, author, bpm, loops, moods, genres, dispatch }) => (
 
     <div>
         <Link to={`/sound/${id}`}>

@@ -7,14 +7,15 @@ import "react-sweet-progress/lib/style.css";
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
-
+let Filename =''
 class Upload extends Component {
     state = {
         username: '',
         avatar: '',
         isUploading: false,
         progress: 0,
-        avatarURL: ''
+        avatarURL: '',
+        trackname: '',
     };
 
     notifySuccess = (message) => toast.info("Le morceau : " + message + "a bien été téléchargé !");
@@ -27,18 +28,19 @@ class Upload extends Component {
         this.notifySuccess(error)
     }
     handleUploadSuccess = (filename) => {
-        this.setState({ avatar: filename, progress: 100, isUploading: false });
+        this.setState({ avatar: filename, trackname: filename, progress: 100, isUploading: false });
         firebase.storage().ref(this.props.author).child(filename).getDownloadURL().then(url => this.setState({ avatarURL: url }));
         this.notifySuccess(filename)
     };
-    render() {
+
+    
+    render() { 
         return (
             <div>
                 {this.state.isUploading &&
                    <Progress percent={this.state.progress}  />
                 }
                 
-
                 <CustomUploadButton
                     accept="image/audio/*"
                     name="avatar"
@@ -59,4 +61,5 @@ class Upload extends Component {
         
     }
 }
-export default Upload;
+
+export default Upload 

@@ -8,6 +8,7 @@ const _addSound = (sound) => ({
 export const addSound = (soundData = {
     title: '',
     description: '',
+    filename: '',
     author: '',
     bpm: '',
     genres: [],
@@ -20,6 +21,7 @@ export const addSound = (soundData = {
     return (dispatch) => {
         const sound = {
             title: soundData.title,
+            filename: soundData.filename,
             description: soundData.description,
             author: soundData.author,
             bpm: soundData.bpm,
