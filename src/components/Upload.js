@@ -9,14 +9,21 @@ import 'react-toastify/dist/ReactToastify.css';
 
 
 class Upload extends Component {
-    state = {
-        username: '',
-        avatar: '',
-        isUploading: false,
-        progress: 0,
-        avatarURL: '',
-        
-    };
+    constructor(props) {
+        super(props)
+        this.state = {
+            username: '',
+            avatar: '',
+            isUploading: false,
+            progress: 0,
+            avatarURL: '',
+            filename: ''
+            
+        }
+    }
+    
+
+
 
     notifySuccess = (message) => toast.info("Le morceau : " + message + "a bien été téléchargé !");
     notifyError = (message) => toast.error(message);
@@ -27,47 +34,22 @@ class Upload extends Component {
         this.setState({ isUploading: false });
         this.notifySuccess(error)
     }
-    handleUploadSuccess = (filename) => {
-        this.setState({ avatar: filename, progress: 100, isUploading: false });
+    handleUploadSuccess = (filename,props) => {
+        this.setState({ avatar: filename, filename: filename, progress: 100, isUploading: false });
         firebase.storage().ref(this.props.author).child(filename).getDownloadURL().then(url => this.setState({ avatarURL: url }));
         
         this.notifySuccess(filename)
     };
 
-     
-    componentWillMount() {
-        console.log('component will mount : ',this.props)
-        
-    }
-    componentWillUpdate() {
-        console.log('component will update : ',this.props)
-        
-    }
-
-    componentDidMount() {
-        console.log('component did mount : ',this.props)
-
-    }
-
-    componentDidUpdate() {
-        console.log('component did update : ',this.props)
-
-    }
-
-    componentWillReceiveProps() {
-        console.log('component will receive props : ',this.props)
-
-    }
-
-
-
-    
     render() { 
         return (
             <div>
                 {this.state.isUploading &&
                    <Progress percent={this.state.progress}  />
+                  
                 }
+                Filename : {this.state.filename}
+
                 
                 <CustomUploadButton
                     accept="image/audio/*"
@@ -90,4 +72,4 @@ class Upload extends Component {
     }
 }
 
-export default Upload 
+export default Upload

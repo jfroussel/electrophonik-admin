@@ -61,6 +61,22 @@ const _editSound = (id, updates) => ({
     updates
 });
 
+const _editFilename = (id, filename) => ({
+    type : 'EDIT_FILENAME',
+    id,
+    filename
+})
+
+export const editFilename = (id, filename) => {
+    console.log('id :',id)
+    return (dispatch) => {
+        return database.ref(`sounds/${id}`).update(filename).then(() => {
+            dispatch(_editFilename(id, filename));
+        });
+    }
+};
+
+
 export const editSound = (id, updates) => {
     console.log('id :',id)
     return (dispatch) => {

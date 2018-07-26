@@ -41,7 +41,7 @@ export default class SoundForm extends React.Component {
 
     
     componentWillMount() {
-        console.log('component will mount : ',this.props)
+        console.log('component will mount : ',this)
         
     }
     componentWillUpdate() {
@@ -176,7 +176,7 @@ export default class SoundForm extends React.Component {
                             id="filename"
                             aria-describedby="filenameHelp"
                             placeholder="Nom du fichier"
-                            value={this.state.filename}
+                            value={this.filename}
                             onChange={this.onFilenameChange}
                         />
                     </div>
