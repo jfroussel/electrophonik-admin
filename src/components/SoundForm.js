@@ -176,7 +176,7 @@ export default class SoundForm extends React.Component {
                             id="filename"
                             aria-describedby="filenameHelp"
                             placeholder="Nom du fichier"
-                            value={this.filename}
+                            value={this.state.filename}
                             onChange={this.onFilenameChange}
                         />
                     </div>
