@@ -64,6 +64,11 @@ const SoundList = (props) => (
                             {
                                 Header: "Title",
                                 accessor: "title",
+                                minWidth: 200,
+                            },
+                            {
+                                Header: "Filename",
+                                accessor: "filename",
                                 minWidth: 300,
                             },
                             {
