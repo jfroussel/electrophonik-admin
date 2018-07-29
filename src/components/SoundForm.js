@@ -3,6 +3,7 @@ import Select from 'react-select'
 import 'react-select/dist/react-select.css'
 import Genres from './Genres'
 import Moods from './Moods'
+import Tones from './Tones'
 import Instruments from './Instruments'
 import Upload from './Upload'
 
@@ -15,6 +16,7 @@ export default class SoundForm extends React.Component {
         this.onAuthorChange = this.onAuthorChange.bind(this)
         this.onDescriptionChange = this.onDescriptionChange.bind(this)
         this.onBpmChange = this.onBpmChange.bind(this)
+        this.onToneChange = this.onToneChange.bind(this)
         this.onLenghtChange = this.onLenghtChange.bind(this)
         this.onGenresChange = this.onGenresChange.bind(this)
         this.onMoodsChange = this.onMoodsChange.bind(this)
@@ -30,6 +32,7 @@ export default class SoundForm extends React.Component {
             author: props.sound ? props.sound.author : '',
             description: props.sound ? props.sound.description : '',
             bpm: props.sound ? props.sound.bpm : '',
+            tone: props.sound ? props.sound.tone : '',
             lenght: props.sound ? props.sound.lenght : '',
             genres: props.sound ? props.sound.genres : '',
             moods: props.sound ? props.sound.moods : '',
@@ -89,6 +92,10 @@ export default class SoundForm extends React.Component {
         const bpm = parseInt(e.target.value, 10)
         this.setState(() => ({ bpm: bpm }))
     }
+
+    onToneChange(tone) {
+        this.setState(() => ({ tone: tone }))
+    }
     onLenghtChange(e) {
         const lenght = e.target.value
         this.setState(() => ({ lenght: lenght }))
@@ -128,6 +135,7 @@ export default class SoundForm extends React.Component {
                     author: this.state.author,
                     description: this.state.description,
                     bpm: this.state.bpm,
+                    tone: this.state.tone,
                     lenght: this.state.lenght,
                     genres: this.state.genres ? this.state.genres : '',
                     moods: this.state.moods ? this.state.moods : '',
@@ -193,7 +201,7 @@ export default class SoundForm extends React.Component {
                     </div>
                     <div className="row col-6">
 
-                        <div className="form-group col-3">
+                        <div className="form-group col-2">
                             <label>Bpm</label>
                             <input
                                 type="number"
@@ -204,7 +212,7 @@ export default class SoundForm extends React.Component {
                                 onChange={this.onBpmChange}
                             />
                         </div>
-                        <div className="form-group col-3">
+                        <div className="form-group col-2">
                             <label>Durée</label>
                             <input
                                 type="number"
@@ -220,7 +228,7 @@ export default class SoundForm extends React.Component {
 
                             />
                         </div>
-                        <div className="form-group col-3">
+                        <div className="form-group col-2">
                             <label>Nombre de boucles</label>
                             <input
                                 type="number"
@@ -229,6 +237,17 @@ export default class SoundForm extends React.Component {
                                 aria-describedby="LoopsHelp"
                                 value={this.state.loops ? this.state.loops : 0}
                                 onChange={this.onLoopsChange}
+                            />
+                        </div>
+                        <div className="form-group col-2">
+                            <label>Tone</label>
+                            <Select
+                                name="tones"
+                                placeholder="Selectionner tonalité"
+                                multi={false}
+                                value={this.state.tone}
+                                onChange={this.onToneChange}
+                                options={Tones}
                             />
                         </div>
                         <div className="form-group col-3">

@@ -83,6 +83,11 @@ const SoundList = (props) => (
 
                             },
                             {
+                                Header: "Tone",
+                                accessor: "tone.label",
+
+                            },
+                            {
                                 Header: "Lenght",
                                 accessor: "lenght",
 

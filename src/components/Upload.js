@@ -48,7 +48,7 @@ class Upload extends Component {
                    <Progress percent={this.state.progress}  />
                   
                 }
-                Filename : {this.state.filename}
+                {this.state.filename}
 
                 
                 <CustomUploadButton
